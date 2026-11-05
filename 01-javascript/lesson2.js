@@ -60,16 +60,30 @@ const products = [
 
 function updateProductPrice(products, id, newPrice) {
   // Return a new array with the matching product's price updated.
+
+  return products.map((product) =>
+    product.id === id ? { ...product, price: newPrice } : product
+  );
 }
 
 function restockProduct(products, id, quantity) {
   // Return a new array with the matching product's stock increased.
+  return products.map((product) =>
+    product.id === id
+      ? {
+          ...product,
+          stock: product.stock + quantity,
+        }
+      : product
+  );
 }
 
 function removeProduct(products, id) {
   // Return a new array without the matching product.
+
+  return products.filter((product) => product.id !== id);
 }
 
-console.log(updateProductPrice(products, 1, 1000));
+console.log(updateProductPrice(products, 1, 800));
 console.log(restockProduct(products, 2, 5));
 console.log(removeProduct(products, 3));

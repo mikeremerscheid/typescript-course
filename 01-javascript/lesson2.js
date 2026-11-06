@@ -62,7 +62,7 @@ function updateProductPrice(products, id, newPrice) {
   // Return a new array with the matching product's price updated.
 
   return products.map((product) =>
-    product.id === id ? { ...product, price: newPrice } : product
+    product.id === id ? { ...product, price: newPrice } : product,
   );
 }
 
@@ -74,7 +74,7 @@ function restockProduct(products, id, quantity) {
           ...product,
           stock: product.stock + quantity,
         }
-      : product
+      : product,
   );
 }
 

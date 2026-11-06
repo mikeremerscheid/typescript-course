@@ -16,5 +16,6 @@
     "tsx": "^4.23.15",
     "typescript": "~6.0.0",
     "typescript-eslint": "^8.72.1"
-  }
+  },
+  "type": "module"
 }
